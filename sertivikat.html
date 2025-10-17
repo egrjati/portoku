@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Tailwind Output CSS -->
+  <link rel="stylesheet" href="css/output.css">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <title>Sertifikat & Penghargaan - Enggar Jati</title>
+
+  <style>
+    .gradient-bg {
+      background: linear-gradient(135deg, #1a1b21 0%, #17181d 100%);
+    }
+    .gradient-text {
+      background: linear-gradient(90deg, #4ade80, #3b82f6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .certificate-card {
+      transition: all 0.3s ease;
+      background: linear-gradient(145deg, rgba(30, 31, 38, 0.8), rgba(25, 26, 32, 0.8));
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .certificate-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      border-color: rgba(59, 130, 246, 0.3);
+    }
+    .certificate-image {
+      transition: transform 0.5s ease;
+    }
+    .certificate-card:hover .certificate-image {
+      transform: scale(1.05);
+    }
+    .category-filter {
+      transition: all 0.3s ease;
+    }
+    .category-filter.active {
+      background: linear-gradient(90deg, #3b82f6, #4ade80);
+      color: white;
+    }
+    .nav-link {
+      position: relative;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #4ade80, #3b82f6);
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+  </style>
+</head>
+<body class="gradient-bg font-inter text-slate-200 min-h-screen">
+
+  <!-- Nav -->
+  <nav class="fixed top-0 left-0 w-full bg-black/40 backdrop-blur-xl py-3 px-4 md:py-4 md:px-6 z-50 border-b border-slate-800/50">
+    <div class="flex items-center justify-between max-w-7xl mx-auto">
+      <!-- Logo / Title -->
+      <a href="index.html" class="text-white font-bold font-poppins text-2xl md:text-3xl tracking-wide">
+        <span class="gradient-text">&lt;/&gt;</span> <span class="text-white">EnggarJati</span>
+      </a>
+  
+      <!-- Social Icons (desktop only) -->
+      <div class="hidden md:flex space-x-4 md:space-x-6">
+        <a href="https://www.linkedin.com/in/egrjati/" target="_blank" class="group">
+          <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-800 flex items-center justify-center transition-all duration-300 group-hover:bg-blue-600">
+            <i class="fab fa-linkedin-in text-lg text-white"></i>
+          </div>
+        </a>
+        <a href="https://www.instagram.com/egrjati?igsh=eWJveWc1Ymp5OXBj" target="_blank" class="group">
+          <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-800 flex items-center justify-center transition-all duration-300 group-hover:bg-pink-600">
+            <i class="fab fa-instagram text-lg text-white"></i>
+          </div>
+        </a>
+        <a href="https://github.com/egrjati" target="_blank" class="group">
+          <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-800 flex items-center justify-center transition-all duration-300 group-hover:bg-slate-600">
+            <i class="fab fa-github text-lg text-white"></i>
+          </div>
+        </a>
+        <a href="sertivikat.html" target="_blank" class="group">
+          <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-800 flex items-center justify-center transition-all duration-300 group-hover:bg-slate-600">
+            <i class="fas fa-medal text-lg text-white"></i>
+          </div>
+        </a>
+      </div>
+  
+      <!-- Mobile Menu Button -->
+      <button id="menu-btn" class="md:hidden text-white">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+    </div>
+  
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden mt-4 hidden w-full">
+      <div class="flex flex-col space-y-4 text-center text-2xl">
+        <a href="https://github.com/egrjati" class="nav-link text-slate-300 hover:text-white">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="sertivikat.html" class="nav-link text-white hover:text-white">
+          <i class="fas fa-medal"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/egrjati/" class="nav-link text-slate-300 hover:text-white">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://www.instagram.com/egrjati?igsh=eWJveWc1Ymp5OXBj" class="nav-link text-slate-300 hover:text-white">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="pt-32 pb-16 px-6 max-w-7xl mx-auto text-center">
+    <h1 class="text-4xl md:text-6xl font-bold mb-4 font-poppins" data-aos="fade-up">
+      My <span class="gradient-text">Certificates</span> & Achievements
+    </h1>
+    <p class="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="100">
+      A collection of my certifications and achievements in technology, data analysis, and software development.
+    </p>
+    
+    <!-- Category Filters -->
+    <div class="flex flex-wrap justify-center gap-4 mb-12" data-aos="fade-up" data-aos-delay="200">
+      <button class="category-filter px-4 py-2 rounded-full bg-slate-800/50 text-slate-300 hover:bg-slate-700/50 active">
+        All Certificates
+      </button>
+  </header>
+
+  <!-- Certificate Gallery -->
+  <main class="px-6 pb-20 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- Certificate 1 -->
+      <div class="certificate-card rounded-2xl overflow-hidden" data-aos="fade-up">
+        <a href="assets/wahyu-enggar-jati-certificate-achievements-km_ta24.pdf" target="_blank" class="block overflow-hidden">
+          <div class="h-72 overflow-hidden">
+            <img src="assets/revou.png" alt="RevoU Certificate" class="certificate-image w-full h-full object-cover">
+          </div>
+        </a>
+        <div class="p-6">
+          <div class="flex justify-between items-start mb-3">
+            <h3 class="text-xl font-semibold">RevoU Tech Academy</h3>
+            <span class="text-xs bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full">2024</span>
+          </div>
+          <p class="text-slate-400 text-sm mb-4">Learn Data Analytics & Software Development With AI</p>
+          <p class="text-slate-500 text-xs">Studi Independent</p>
+        </div>
+      </div>
+
+      <!-- Certificate 2 -->
+      <div class="certificate-card rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+        <a href="assets/sertifikat penghargaan.pdf" target="_blank" class="block overflow-hidden">
+          <div class="h-72 overflow-hidden">
+            <img src="assets/pround.jpg" alt="Media Achievement" class="certificate-image w-full h-full object-cover object-[center_9%]">
+          </div>
+        </a>
+        <div class="p-6">
+          <div class="flex justify-between items-start mb-3">
+            <h3 class="text-xl font-semibold">Media Recognition</h3>
+            <span class="text-xs bg-amber-500/20 text-amber-300 px-3 py-1 rounded-full">2025</span>
+          </div>
+          <p class="text-slate-400 text-sm mb-4">Peraih Karya Menarik Versi Media Masa</p>
+          <p class="text-slate-500 text-xs">Certificate of Merit</p>
+        </div>
+      </div>
+
+      <!-- Certificate 3 -->
+      <div class="certificate-card rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+        <a href="assets/Completion Certificate _ SkillsBuild.pdf" target="_blank" class="block overflow-hidden">
+          <div class="h-72 overflow-hidden">
+            <img src="assets/imb.png" alt="IBM Certificate" class="certificate-image w-full h-full object-cover object-[center_1%]">
+          </div>
+        </a>
+        <div class="p-6">
+          <div class="flex justify-between items-start mb-3">
+            <h3 class="text-xl font-semibold">IBM SkillsBuild</h3>
+            <span class="text-xs bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full">2024</span>
+          </div>
+          <p class="text-slate-400 text-sm mb-4">Web Development Fundamentals</p>
+          <p class="text-slate-500 text-xs">Frontend Development</p>
+        </div>
+      </div>
+
+      <!-- Certificate 4 -->
+      <div class="certificate-card rounded-2xl overflow-hidden" data-aos="fade-up">
+        <a href="assets/backend.pdf" target="_blank" class="block overflow-hidden">
+          <div class="h-72 overflow-hidden">
+            <img src="assets/backe.png" alt="Backend Certificate" class="certificate-image w-full h-full object-cover object-[center_1%]">
+          </div>
+        </a>
+        <div class="p-6">
+          <div class="flex justify-between items-start mb-3">
+            <h3 class="text-xl font-semibold">TECHNOFEST 2023</h3>
+            <span class="text-xs bg-green-500/20 text-green-300 px-3 py-1 rounded-full">2024</span>
+          </div>
+          <p class="text-slate-400 text-sm mb-4">BACKEND WEB DEVELOPMENT</p>
+          <p class="text-slate-500 text-xs">Server-side Programming</p>
+        </div>
+      </div>
+
+      <!-- Certificate 5 - Placeholder for future certificates -->
+      <div class="certificate-card rounded-2xl overflow-hidden border-2 border-dashed border-slate-600 flex flex-col items-center justify-center min-h-[400px] text-center p-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="w-16 h-16 rounded-full bg-slate-700/50 flex items-center justify-center mb-4">
+          <i class="fas fa-plus text-2xl text-slate-400"></i>
+        </div>
+        <h3 class="text-xl font-semibold mb-2">More Achievements Coming Soon</h3>
+        <p class="text-slate-400">I'm continuously learning and adding new certifications to my portfolio.</p>
+      </div>
+
+      <!-- Certificate 6 - Placeholder for future certificates -->
+      <div class="certificate-card rounded-2xl overflow-hidden border-2 border-dashed border-slate-600 flex flex-col items-center justify-center min-h-[400px] text-center p-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="w-16 h-16 rounded-full bg-slate-700/50 flex items-center justify-center mb-4">
+          <i class="fas fa-trophy text-2xl text-amber-400"></i>
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Future Accomplishments</h3>
+        <p class="text-slate-400">Stay tuned for more achievements in technology and innovation.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800/50 py-10">
+    <div class="max-w-7xl mx-auto px-6">
+      <!-- <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-6 md:mb-0">
+          <p class="text-white font-bold font-poppins text-2xl">
+            <span class="gradient-text">&lt;/&gt;</span> EnggarJati
+          </p>
+          <p class="text-slate-500 text-sm mt-2">
+            Innovative Developer & Data Analyst
+          </p>
+        </div>
+        
+      </div> -->
+      
+      <div class="border-t border-slate-800/50 mt-8 pt-8 text-center">
+        <p class="text-slate-500 text-sm">
+          © 2025 Enggar Jati.
+        </p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- AOS JS + init -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    AOS.init({ 
+      duration: 800, 
+      once: true,
+      easing: 'ease-out-quad'
+    });
+  });
+</script>
+  <!-- script mobile menu -->
+  <script>
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+  
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+  </script>
+
+<!-- kategori -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const filterButtons = document.querySelectorAll('.category-filter');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        // reset semua tombol
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        // aktifkan tombol yang dipilih
+        this.classList.add('active');
+
+        // TODO: Tambahkan logika filter di sini
+        // misalnya: tampilkan hanya kartu sertifikat sesuai kategori
+      });
+    });
+  });
+</script>
+
+
+</body>
+</html>

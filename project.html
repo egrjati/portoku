@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind Output CSS -->
+  <link rel="stylesheet" href="css/output.css">
+  <!-- AOS CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <title>My Portfolio | Innovative Projects Showcase</title>
+
+  <style>
+    .gradient-bg {
+      background: linear-gradient(135deg, #1a1b21 0%, #17181d 100%);
+    }
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+    .tech-tag {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      margin-right: 8px;
+      margin-bottom: 8px;
+    }
+    .gradient-text {
+      background: linear-gradient(90deg, #4ade80, #3b82f6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 640px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      .hero-subtitle {
+        font-size: 1.1rem;
+      }
+      .project-card-content {
+        flex-direction: column;
+      }
+      .project-image {
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+      .mobile-social-icons {
+        display: flex;
+        justify-content: center;
+        margin-top: 1.5rem;
+        gap: 1rem;
+      }
+    }
+    
+    @media (min-width: 641px) and (max-width: 768px) {
+      .hero-title {
+        font-size: 3rem;
+      }
+      .project-image {
+        width: 40%;
+      }
+    }
+    
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .project-image {
+        width: 45%;
+      }
+    }
+  </style>
+</head>
+<body class="gradient-bg font-inter text-slate-200">
+
+  <!-- Nav -->
+  <nav class="fixed top-0 left-0 w-full bg-black/40 backdrop-blur-xl py-3 px-4 md:py-4 md:px-6 z-50 border-b border-slate-800/50">
+    <div class="flex items-center justify-between max-w-7xl mx-auto">
+      <!-- Logo / Title -->
+      <a href="index.html" class="text-white font-bold font-poppins text-2xl md:text-3xl tracking-wide">
+        <span class="gradient-text">&lt;/&gt;</span> <span class="text-white">EnggarJati</span>
+      </a>
+  
+      <!-- Social Icons (desktop only) -->
+      <div class="hidden md:flex space-x-4 md:space-x-6">
+        <a href="https://www.linkedin.com/in/egrjati/" target="_blank" class="group">
+          <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-800 flex items-center justify-center transition-all duration-300 group-hover:bg-blue-600">
+            <i class="fab fa-linkedin-in text-lg text-white"></i>
+          </div>
+        </a>
+        <a href="https://www.instagram.com/egrjati?igsh=eWJveWc1Ymp5OXBj" target="_blank" class="group">
+          <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-800 flex items-center justify-center transition-all duration-300 group-hover:bg-pink-600">
+            <i class="fab fa-instagram text-lg text-white"></i>
+          </div>
+        </a>
+        <a href="https://github.com/egrjati" target="_blank" class="group">
+          <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-800 flex items-center justify-center transition-all duration-300 group-hover:bg-green-600">
+            <i class="fab fa-github text-lg text-white"></i>
+          </div>
+        </a>
+        <a href="sertivikat.html" target="_blank" class="group">
+          <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-800 flex items-center justify-center transition-all duration-300 group-hover:bg-yellow-600">
+            <i class="fas fa-medal text-lg text-white"></i>
+          </div>
+        </a>
+      </div>
+  
+      <!-- Mobile Menu Button -->
+      <button id="menu-btn" class="md:hidden text-white">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+    </div>
+  
+    <!-- Mobile Menu -->
+     <div id="mobile-menu" class="md:hidden mt-4 hidden w-full">
+    <div class="flex flex-col space-y-4 text-center text-2xl">
+      <a href="https://github.com/egrjati" class="nav-link text-slate-300 hover:text-white">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="sertivikat.html" class="nav-link text-white hover:text-white">
+        <i class="fas fa-medal"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/egrjati/" class="nav-link text-slate-300 hover:text-white">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://www.instagram.com/egrjati?igsh=eWJveWc1Ymp5OXBj" class="nav-link text-slate-300 hover:text-white">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+  </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="pt-32 pb-20 px-4 sm:px-6 max-w-7xl mx-auto text-center">
+    <h1 class="hero-title text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-poppins" data-aos="fade-up">
+      Innovative <span class="gradient-text">Projects</span> Showcase
+    </h1>
+    <p class="hero-subtitle text-lg md:text-xl lg:text-2xl text-slate-400 max-w-3xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="100">
+      A collection of my technical projects demonstrating skills in IoT, data analysis, and software development
+    </p>
+    <div class="flex flex-wrap justify-center gap-2" data-aos="fade-up" data-aos-delay="200">
+      <span class="tech-tag">IoT</span>
+      <span class="tech-tag">Python</span>
+      <span class="tech-tag">Data Analysis</span>
+      <span class="tech-tag">Web Development</span>
+      <span class="tech-tag">Machine Learning</span>
+    </div>
+  </section>
+
+  <!-- Projects Grid -->
+  <main class="pb-24 px-4 sm:px-6 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
+      
+      <!-- Card 1 -->
+      <div class="bg-gradient-to-br from-[#2a2d38] to-[#1f2129] rounded-2xl overflow-hidden card-hover border border-slate-800/50" data-aos="fade-up">
+        <div class="p-6 md:p-8">
+          <div class="flex flex-col sm:flex-row items-start gap-4 md:gap-6 project-card-content">
+            <div class="flex-shrink-0 project-image mx-auto sm:mx-0">
+              <img src="assets/hrdd-removebg-preview 1.png" alt="IoT Poultry House Monitoring" class="w-full max-w-xs h-48 object-contain rounded-xl">
+            </div>
+            <div class="flex-1">
+              <h2 class="text-xl md:text-2xl font-bold mb-4 font-poppins">IoT Poultry House Monitoring</h2>
+              <p class="text-slate-400 mb-6 text-sm md:text-base">
+                IoT-based system monitoring temperature, humidity, light, water level, and air quality in real time with automatic device control.
+              </p>
+              <div class="flex flex-wrap">
+                <span class="tech-tag">Arduino</span>
+                <span class="tech-tag">Sensors</span>
+                <span class="tech-tag">Automation</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="px-6 md:px-8 pb-6 md:pb-8 pt-4 border-t border-slate-800/50">
+          <a href="#" class="text-blue-400 hover:text-blue-300 font-medium flex items-center text-sm md:text-base">
+            View Project Details
+            <i class="fas fa-arrow-right ml-2 text-sm"></i>
+          </a>
+        </div>
+      </div>
+  
+      <!-- Card 2 -->
+      <div class="bg-gradient-to-br from-[#2a2d38] to-[#1f2129] rounded-2xl overflow-hidden card-hover border border-slate-800/50" data-aos="fade-up" data-aos-delay="100">
+        <div class="p-6 md:p-8">
+          <div class="flex flex-col sm:flex-row items-start gap-4 md:gap-6 project-card-content">
+            <div class="flex-shrink-0 relative project-image mx-auto xl:mt-10 lg:mt-9 sm:mx-0">
+              <img src="assets/image.png" alt="IoT Monitoring Website Dashboard" class="w-full max-w-xs h-40 xl:w-60 md:w-80 sm:w-52 sm:h-44 md:h-52 object-cover rounded-xl border-2 border-slate-700">
+              <img src="assets/cekka 1.png" alt="Dashboard Detail" class="absolute -bottom-4 -right-4 w-16 h-36  xl:w-16 lg:w-16 md:w-16 -translate-x-11 sm:translate-x-1 md:translate-x-4 md:h-36 sm:w-14 sm:h-32 object-cover rounded-lg border-2 border-slate-700 shadow-lg">
+            </div>
+            <div class="flex-1 sm:ml-5">
+              <h2 class="text-xl md:text-2xl font-bold mb-4 font-poppins">IoT Monitoring Website Dashboard</h2>
+              <p class="text-slate-400 mb-6 text-sm md:text-base">
+                Web-based dashboard for real-time monitoring of IoT sensor data with visualization of temperature, humidity, and device status.
+              </p>
+              <div class="flex flex-wrap">
+                <span class="tech-tag">Web Development</span>
+                <span class="tech-tag">Real-time Data</span>
+                <span class="tech-tag">Data Visualization</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="px-6 md:px-8 pb-6 md:pb-8 pt-4 border-t border-slate-800/50">
+          <a href="#" class="text-blue-400 hover:text-blue-300 font-medium xl:-translate-y-12 lg:-mt-12 flex items-center text-sm md:text-base">
+            View Project Details
+            <i class="fas fa-arrow-right ml-2 text-sm"></i>
+          </a>
+        </div>
+      </div>
+  
+      <!-- Card 3 -->
+      <div class="bg-gradient-to-br from-[#2a2d38] to-[#1f2129] rounded-2xl overflow-hidden card-hover border border-slate-800/50" data-aos="fade-up">
+        <div class="p-6 md:p-8">
+          <div class="flex flex-col sm:flex-row items-start gap-4 md:gap-6 project-card-content">
+            <div class="flex-shrink-0 project-image mx-auto sm:mx-0">
+              <img src="assets/panel-removebg-preview.png" alt="Solar Panel Tracking System" class="w-full max-w-xs xl:w-40 h-48 object-contain -mt-8">
+            </div>
+            <div class="flex-1">
+              <h2 class="text-xl md:text-2xl font-bold mb-4 font-poppins">Solar Panel Tracking System</h2>
+              <p class="text-slate-400 mb-6 text-sm md:text-base">
+                Solar tracking system that increases energy efficiency by aligning panels with the sun's position using LDR sensors and a 220V DC motor.
+              </p>
+              <div class="flex flex-wrap">
+                <span class="tech-tag">Renewable Energy</span>
+                <span class="tech-tag">Electronics</span>
+                <span class="tech-tag">Automation</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="px-6 md:px-8 pb-6 md:pb-8 pt-4 border-t border-slate-800/50">
+          <a href="#" class="text-blue-400 hover:text-blue-300 font-medium flex items-center text-sm md:text-base">
+            View Project Details
+            <i class="fas fa-arrow-right ml-2 text-sm"></i>
+          </a>
+        </div>
+      </div>
+  
+      <!-- Card 4 -->
+      <div class="bg-gradient-to-br from-[#2a2d38] to-[#1f2129] rounded-2xl overflow-hidden card-hover border border-slate-800/50" data-aos="fade-up" data-aos-delay="100">
+        <div class="p-6 md:p-8">
+          <div class="flex flex-col sm:flex-row items-start gap-4 md:gap-6 project-card-content">
+            <div class="flex-shrink-0 project-image mx-auto sm:mx-0">
+              <img src="assets/bike.png" alt="Bike Sales Data Analysis Dashboard" class="w-full max-w-xs h-40 object-cover rounded-xl border-2 border-slate-700">
+            </div>
+            <div class="flex-1">
+              <h2 class="text-xl md:text-2xl font-bold mb-4 font-poppins">Bike Sales Data Analysis Dashboard</h2>
+              <p class="text-slate-400 mb-6 text-sm md:text-base">
+                Interactive data visualization dashboard analyzing bicycle sales with filters by bike type, country, gender, and customer age.
+              </p>
+              <div class="flex flex-wrap">
+                <span class="tech-tag">Data Analysis</span>
+                <span class="tech-tag">Visualization</span>
+                <span class="tech-tag">Business Intelligence</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="px-6 md:px-8 pb-6 md:pb-8 pt-4 border-t border-slate-800/50">
+          <a href="#" class="text-blue-400 hover:text-blue-300 font-medium flex items-center text-sm md:text-base -translate-y-5">
+            View Project Details
+            <i class="fas fa-arrow-right ml-2 text-sm"></i>
+          </a>
+        </div>
+      </div>
+  
+      <!-- Card 5 -->
+      <div class="bg-gradient-to-br from-[#2a2d38] to-[#1f2129] rounded-2xl overflow-hidden card-hover border border-slate-800/50" data-aos="fade-up">
+        <div class="p-6 md:p-8">
+          <div class="flex flex-col sm:flex-row items-start gap-4 md:gap-6 project-card-content">
+            <div class="flex-shrink-0 project-image mx-auto sm:mx-0">
+              <img src="assets/ai deteksi.png" alt="Face Recognition with Python" class="w-full max-w-xs h-40 object-cover rounded-xl border-2 border-slate-700">
+            </div>
+            <div class="flex-1">
+              <h2 class="text-xl md:text-2xl font-bold mb-4 font-poppins">Face Recognition with Python</h2>
+              <p class="text-slate-400 mb-6 text-sm md:text-base">
+                Face detection and recognition system built with Python and OpenCV, with database storage for known faces and identification capabilities.
+              </p>
+              <div class="flex flex-wrap">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">OpenCV</span>
+                <span class="tech-tag">Machine Learning</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="px-6 md:px-8 pb-6 md:pb-8 pt-4 border-t border-slate-800/50">
+          <a href="#" class="text-blue-400 hover:text-blue-300 font-medium flex items-center text-sm md:text-base xl:-translate-y-5 ">
+            View Project Details
+            <i class="fas fa-arrow-right ml-2 text-sm"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Call to Action Card -->
+      <div class="bg-gradient-to-br from-blue-900/30 to-indigo-900/30 rounded-2xl overflow-hidden card-hover border border-blue-800/30 p-6 md:p-8 flex flex-col justify-center items-center text-center" data-aos="fade-up" data-aos-delay="100">
+        <div class="mb-4 md:mb-6 w-16 h-16 md:w-20 md:h-20 rounded-full bg-blue-800/30 flex items-center justify-center">
+          <i class="fas fa-paper-plane text-2xl md:text-3xl text-blue-400"></i>
+        </div>
+        <h2 class="text-xl md:text-2xl font-bold mb-4 font-poppins">Interested in working together?</h2>
+        <p class="text-slate-400 mb-6 max-w-md text-sm md:text-base">
+          I'm available for freelance projects and full-time opportunities. Let's turn your ideas into reality.
+        </p>
+        <a href="mailto:your-email@example.com" class="px-5 py-2 md:px-6 md:py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-medium transition-colors duration-300 text-sm md:text-base">
+          Contact Me
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-10 border-t border-slate-800/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center">
+      <p class="text-slate-500 text-sm">
+        © 2023 Enggar Jati. All rights reserved.
+      </p>
+      <p class="text-slate-600 text-sm mt-2">
+        Crafted with <i class="fas fa-heart text-red-500 mx-1"></i> for innovative solutions
+      </p>
+    </div>
+  </footer>
+
+
+  <!-- script mobile menu -->
+<script>
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
+</script>
+  
+  <!-- AOS JS + init -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      AOS.init({ 
+        duration: 800, 
+        once: true,
+        easing: 'ease-out-quad'
+      });
+    });
+  </script>
+</body>
+</html>

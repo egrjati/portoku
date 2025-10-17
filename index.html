@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/output.css">
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <title>Portofolioku</title>
+  
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+   <!-- Font Awesome -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+
+    .gradient-text {
+      background: linear-gradient(90deg, #4ade80, #3b82f6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .contact-gradient {
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    }
+    .input-field {
+      transition: all 0.3s ease;
+      background: rgba(255, 255, 255, 0.8);
+    }
+    .input-field:focus {
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    .floating-element {
+      animation: float 6s ease-in-out infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0px); }
+    }
+    .pulse-ring {
+      display: block;
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.7);
+      }
+      70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 15px rgba(79, 70, 229, 0);
+      }
+      100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(79, 70, 229, 0);
+      }
+    }
+  </style>
+  
+</head>
+<body class="w-full h-full transition-opacity bg-black ">
+
+<!-- Navbar -->
+<nav class="fixed top-0 left-0 w-full bg-black/40 backdrop-blur-xl py-3 px-4 md:py-4 md:px-6 z-50 border-b border-slate-800/50">
+  <div class="flex items-center justify-between max-w-7xl mx-auto">
+    <!-- Logo / Title -->
+    <a href="index.html" class="text-white font-bold font-poppins text-2xl md:text-3xl tracking-wide">
+      <span class="gradient-text">&lt;/&gt;</span> <span class="text-white">EnggarJati</span>
+    </a>
+
+    <!-- Social Icons (desktop only) -->
+    <div class="hidden md:flex space-x-4 md:space-x-6">
+      <a href="https://www.linkedin.com/in/egrjati/" target="_blank" class="group">
+        <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-800 flex items-center justify-center transition-all duration-300 group-hover:bg-blue-600">
+          <i class="fab fa-linkedin-in text-lg text-white"></i>
+        </div>
+      </a>
+      <a href="https://www.instagram.com/egrjati?igsh=eWJveWc1Ymp5OXBj" target="_blank" class="group">
+        <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-800 flex items-center justify-center transition-all duration-300 group-hover:bg-pink-600">
+          <i class="fab fa-instagram text-lg text-white"></i>
+        </div>
+      </a>
+      <a href="https://github.com/egrjati" target="_blank" class="group">
+        <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-800 flex items-center justify-center transition-all duration-300 group-hover:bg-green-600">
+          <i class="fab fa-github text-lg text-white"></i>
+        </div>
+      </a>
+      <a href="sertivikat.html" target="_blank" class="group">
+        <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-800 flex items-center justify-center transition-all duration-300 group-hover:bg-yellow-600">
+          <i class="fas fa-medal text-lg text-white"></i>
+        </div>
+      </a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button id="menu-btn" class="md:hidden text-white">
+      <i class="fas fa-bars text-xl"></i>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="md:hidden mt-4 hidden w-full">
+    <div class="flex flex-col space-y-4 text-center text-2xl">
+      <a href="https://github.com/egrjati" class="nav-link text-slate-300 hover:text-white">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="sertivikat.html" class="nav-link text-white hover:text-white">
+        <i class="fas fa-medal"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/egrjati/" class="nav-link text-slate-300 hover:text-white">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://www.instagram.com/egrjati?igsh=eWJveWc1Ymp5OXBj" class="nav-link text-slate-300 hover:text-white">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+  </div>
+</nav>
+
+
+
+ <!-- Nama & Foto (absolute center screen) -->
+ <div class="inset-0 flex flex-col items-center justify-start mt-16 relative">
+  <!-- Foto (absolute, tidak menggeser teks) -->
+  <img src="assets/hp.jpg" 
+       alt="Foto Enggar" 
+       data-aos="zoom-in"
+       class="w-28 h-32 sm:w-28 sm:h-28 md:w-32 md:h-36 lg:w-44 lg:h-44 xl:w-44 xl:h-44 absolute top-[206px] sm:top-48 md:top-[198px] xl:top-[220px] lg:top-[217px] shadow-2xl rounded-md object-cover z-10">
+
+  <!-- Teks (tetap normal di tengah) -->
+  <h1 class="text-slate-200 font-inter font-bold text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-6xl mt-40 relative z-0 text-center leading-loose sm:leading-relaxed md:leading-relaxed lg:leading-relaxed xl:leading-relaxed tracking-wider">
+    WAHYU <br><br> ENGGAR JATI
+  </h1>
+</div>
+
+
+<!-- Keahlian -->
+<div class="overflow-hidden whitespace-nowrap w-full py-4 mt-2 mb-5 relative">
+  <div id="marquee" class="flex">
+    <span class="text-slate-200 font-inter font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl mx-8">
+      WEB DEVELOPER | IoT ENGINEER | UI/UX DESIGNER | NETWORK TECHNICIAN
+    </span>
+    <span class="text-slate-200 font-inter font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl mx-8">
+      WEB DEVELOPER | IoT ENGINEER | UI/UX DESIGNER | NETWORK TECHNICIAN
+    </span>
+  </div>
+</div>
+
+<main class="mb-40">
+  <!-- About Me -->
+  <div class="w-full flex justify-center mt-10">
+    <div class="xl:max-w-[90%] lg:max-w-[80%] md:max-w-[88%] sm:max-w-[98%] px-6 text-slate-200 text-justify">
+      <h2 class="xl:text-3xl lg:text-3xl md:text-2xl sm:text-xl text-lg font-bold mb-3">About me</h2>
+      <p class="font-poppins mb-5 xl:text-xl lg:text-xl md:text-xl sm:text-lg text-base md:leading-relaxed sm:leading-normal">
+        As a graduate of Universitas 17 Agustus 1945 Surabaya, majoring in Informatics Engineering (S.Kom), 
+        I have strong interests and skills in web development, UI/UX design, and Internet of Things (IoT) 
+        system development. I am experienced in working with HTML, CSS (particularly TailwindCSS framework), 
+        JavaScript, PHP, and Laravel as a backend framework. I am also proficient in using Figma to design 
+        responsive and aesthetically pleasing web and mobile interfaces.
+        As an IoT Developer, I have successfully developed several applied projects, such as an IoT-based 
+        poultry house monitoring system, a solar tracker utilizing light sensors and tilt angle detection, 
+        and a hydroponic monitoring system for strawberry cultivation in lowland areas. All of these systems 
+        are integrated with web platforms for real-time monitoring and control.
+        In addition, I am fairly skilled in basic computer network design and hardware troubleshooting, 
+        and I am also accustomed to working with Microsoft Office.
+      </p>
+      
+      <h2 class="text-base xl:text-3xl lg:text-2xl md:text-xl sm:text-lg sm:mt-8 font-bold mb-3 mt-14">Experience</h2>
+      <!-- MASIH BELOM DISET UNTUK RESPONSIVE -->
+      <section class=" py-16 px-6 sm:px-10">
+        <div class="max-w-7xl mx-auto">
+          <!-- Container Card -->
+          <div class="flex flex-col md:flex-row gap-8 justify-center">
+            
+            <!-- Card 1 -->
+            <div class="group relative bg-[#112240]/80 rounded-2xl border border-[#64FFDA]/20 shadow-lg overflow-hidden transition-all duration-500 hover:-translate-y-3 hover:border-[#64FFDA]/40 hover:shadow-[0_0_25px_rgba(100,255,218,0.4)] w-full max-w-xs md:max-w-sm">
+              <!-- Gambar -->
+              <div class="relative h-40 overflow-hidden">
+                <img src="assets/rejo.png" 
+                     alt="Education" 
+                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0A192F] via-[#0A192F]/60 to-transparent"></div>
+                <span class="absolute top-3 left-3 bg-[#64FFDA]/20 text-[#64FFDA] text-xs font-bold px-3 py-1 rounded-full backdrop-blur-md">INTERNSHIP</span>
+              </div>
+              <!-- Konten -->
+              <div class="p-6">
+                <p class="text-[#64FFDA] text-sm mb-1">2020</p>
+                <h3 class="text-white font-bold text-lg mb-2">Internship in Rejo Komputer</h3>
+                <p class="text-gray-300 text-sm mb-4">Learn assembling, diagnosing, repairing, and understanding computer components through hands-on experience.</p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="bg-[#112240] text-[#64FFDA] text-xs px-3 py-1 rounded-full border border-[#64FFDA]/20">Hardware Assembly</span>
+                  <span class="bg-[#112240] text-[#64FFDA] text-xs px-3 py-1 rounded-full border border-[#64FFDA]/20">System Maintenance</span>
+                  <span class="bg-[#112240] text-[#64FFDA] text-xs px-3 py-1 rounded-full border border-[#64FFDA]/20">Troubleshooting & Diagnostics</span>
+                </div>
+              </div>
+            </div>
+      
+            <!-- Card 2 -->
+            <div class="group relative bg-[#112240]/80 rounded-2xl border border-[#64FFDA]/20 shadow-lg overflow-hidden transition-all duration-500 hover:-translate-y-3 hover:border-[#64FFDA]/40 hover:shadow-[0_0_25px_rgba(100,255,218,0.4)] w-full max-w-xs md:max-w-sm">
+              <div class="relative h-40 overflow-hidden">
+                <img src="assets/revo.png" 
+                     alt="Research" 
+                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0A192F] via-[#0A192F]/60 to-transparent"></div>
+                <span class="absolute top-3 left-3 bg-[#64FFDA]/20 text-[#64FFDA] text-xs font-bold px-3 py-1 rounded-full backdrop-blur-md">INTERNSHIP</span>
+              </div>
+              <div class="p-6">
+                <p class="text-[#64FFDA] text-sm mb-1">2024</p>
+                <h3 class="text-white font-bold text-lg mb-2">Data Analytic & Web Dev</h3>
+                <p class="text-gray-300 text-sm mb-4">Developing interactive websites and analyzing data to deliver valuable business insights.</p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="bg-[#112240] text-[#64FFDA] text-xs px-3 py-1 rounded-full border border-[#64FFDA]/20">Front-End</span>
+                  <span class="bg-[#112240] text-[#64FFDA] text-xs px-3 py-1 rounded-full border border-[#64FFDA]/20">Database</span>
+                  <span class="bg-[#112240] text-[#64FFDA] text-xs px-3 py-1 rounded-full border border-[#64FFDA]/20">Data visualization</span>
+                  <span class="bg-[#112240] text-[#64FFDA] text-xs px-3 py-1 rounded-full border border-[#64FFDA]/20">Data Cleaning</span>
+                </div>
+              </div>
+            </div>
+      
+            <!-- Card 3 -->
+            <div class="group relative bg-[#112240]/80 rounded-2xl border border-[#64FFDA]/20 shadow-lg overflow-hidden transition-all duration-500 hover:-translate-y-3 hover:border-[#64FFDA]/40 hover:shadow-[0_0_25px_rgba(100,255,218,0.4)] w-full max-w-xs md:max-w-sm">
+              <div class="relative h-40 overflow-hidden">
+                <img src="assets/iot.png" 
+                     alt="Development" 
+                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0A192F] via-[#0A192F]/60 to-transparent"></div>
+                <span class="absolute top-3 left-3 bg-[#64FFDA]/20 text-[#64FFDA] text-xs font-bold px-3 py-1 rounded-full backdrop-blur-md">FREELANCE</span>
+              </div>
+              <div class="p-6">
+                <p class="text-[#64FFDA] text-sm mb-1">2025</p>
+                <h3 class="text-white font-bold text-lg mb-2">Freelance IoT Assembler</h3>
+                <p class="text-gray-300 text-sm mb-4">Providing IoT hardware assembly and developing efficient, real-time monitoring websites.</p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="bg-[#112240] text-[#64FFDA] text-xs px-3 py-1 rounded-full border border-[#64FFDA]/20">Arduino IDE</span>
+                  <span class="bg-[#112240] text-[#64FFDA] text-xs px-3 py-1 rounded-full border border-[#64FFDA]/20">Web Development</span>
+                  <span class="bg-[#112240] text-[#64FFDA] text-xs px-3 py-1 rounded-full border border-[#64FFDA]/20">IoT</span>
+                </div>
+              </div>
+            </div>
+      
+          </div>
+        </div>
+      </section>
+      
+    
+      
+    <!-- gambar skil -->
+    <div class="mt-24 mb-10 mx-auto justify-center items-center flex ">
+      <img src="assets/Group 6.png" alt="skills" class="xl:w-[80%] xl:h-[70%]">
+    </div>
+
+<!-- Project -->
+<div class="mt-10 mb-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <h2 class="xl:text-4xl lg:text-4xl md:text-4xl sm:text-xl text-xl font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600">
+      Latest Projects
+    </h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Project 1 -->
+      <div class="group relative overflow-hidden rounded-2xl shadow-2xl transform transition-all duration-500 hover:scale-[1.02]">
+        <div class="h-64 bg-gradient-to-br from-blue-400 to-indigo-600 flex items-center justify-center">
+          <div class="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+            </svg>
+          </div>
+        </div>
+        
+        <div class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center p-6 text-center">
+          <h3 class="text-2xl font-bold text-white mb-2">IoT Poultry House Monitoring</h3>
+          <p class="text-gray-200 mb-4"> IoT-based system monitoring temperature, humidity, light, water level, and air quality in real time with automatic device control.</p>
+          <button class="px-6 py-2 bg-white text-gray-900 font-medium rounded-full hover:bg-gray-100 transition-colors">
+            View Details
+          </button>
+        </div>
+        
+        <div class="p-6 bg-white dark:bg-gray-800">
+          <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">IoT Poultry House</h3>
+          <p class="text-gray-600 dark:text-gray-300">Teknologi: C#, Microcontroller, IoT</p>
+        </div>
+      </div>
+      
+      <!-- Project 2 -->
+      <div class="group relative overflow-hidden rounded-2xl shadow-2xl transform transition-all duration-500 hover:scale-[1.02]">
+        <div class="h-64 bg-gradient-to-br from-purple-400 to-pink-600 flex items-center justify-center">
+          <div class="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+        </div>
+        
+        <div class="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center p-6 text-center">
+<<<<<<< HEAD
+          <h3 class="text-xl font-bold text-white mb-2">IoT Monitoring Website Dashboard</h3>
+=======
+          <h3 class="text-2xl font-bold text-white mb-2">IoT Monitoring Website Dashboard</h3>
+>>>>>>> 3c4f8a436b9458d048bff2eefdaf21e45a08c84f
+          <p class="text-gray-200 mb-4">Web-based dashboard for real-time monitoring of IoT sensor data with visualization of temperature, humidity, and device status.</p>
+          <button class="px-6 py-2 bg-white text-gray-900 font-medium rounded-full hover:bg-gray-100 transition-colors">
+            View Details
+          </button>
+        </div>
+        
+        <div class="p-6 bg-white dark:bg-gray-800">
+          <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Monitoring Website Dashboard</h3>
+          <p class="text-gray-600 dark:text-gray-300">Teknologi: Web Developer,Database, UI/UX</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="xl:text-4xl lg:text-3xl md:text-xl sm:text-xl font-medium font-poppins text-center mt-16">See other project</h2>
+  <div class="flex justify-center mt-6">
+    <a href="project.html" 
+       class="relative inline-flex items-center justify-center px-8 py-3 
+              text-sm sm:text-sm font-medium text-white tracking-wide 
+              rounded-xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 
+              shadow-lg shadow-purple-500/30
+              transition-all duration-300 ease-out
+              hover:scale-105 hover:shadow-purple-500/50 hover:from-pink-500 hover:to-indigo-500">
+      Load more
+    </a>
+  </div>
+  
+  
+  
+    </div>
+  </div>
+</main>
+
+
+
+
+<!-- Contact Section -->
+<section class="w-full min-h-screen contact-gradient py-16 px-4 sm:px-8 flex items-center justify-center relative overflow-hidden">
+  <!-- Background decorative elements -->
+  <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+    <div class="absolute -top-24 -left-24 w-64 h-64 rounded-full bg-indigo-500/5"></div>
+    <div class="absolute bottom-10 right-10 w-48 h-48 rounded-full bg-slate-800/5"></div>
+    <div class="absolute top-1/3 right-1/4 w-32 h-32 rounded-full bg-indigo-700/5"></div>
+    
+    <!-- Grid pattern -->
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+CiAgPGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2U9InJnYmEoMCwwLDAsMC4wNCkiIHN0cm9rZS13aWR0aD0iMSI+CiAgICA8cGF0aCBkPSJNNTkgMUwxIDU5Ii8+CiAgICA8cGF0aCBkPSJNLTU5IEwxIC01OSIvPgogICAgPHBhdGggZD0iTTU5IC0xTC0xIDU5Ii8+CiAgPC9nPgo8L3N2Zz4=')]"></div>
+  </div>
+
+  <div class="w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16 xl:gap-24 z-10">
+    
+    <!-- Contact Information & 3D Model -->
+    <div class="w-full lg:w-2/5 flex flex-col items-center lg:items-start" data-aos="fade-right">
+      <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6 font-poppins">
+        Let's <span class="text-indigo-600">Work</span> Together
+      </h2>
+      
+      <p class="text-lg text-slate-700 mb-10 text-center lg:text-left max-w-md">
+        Have a project in mind or want to discuss potential opportunities? Feel free to reach out and I'll get back to you as soon as possible.
+      </p>
+      
+      <!-- Contact Info Cards -->
+      <div class="w-full space-y-5 mb-10">
+        <div class="flex items-start p-4 rounded-xl bg-white shadow-sm border border-slate-200">
+          <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-indigo-100 flex items-center justify-center mr-4">
+            <i class="fas fa-envelope text-indigo-600 text-xl"></i>
+          </div>
+          <div>
+            <h3 class="font-medium text-slate-900 mb-1">Email</h3>
+            <p class="text-slate-600">wahyuuenggarj@gmail.com</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start p-4 rounded-xl bg-white shadow-sm border border-slate-200">
+          <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-indigo-100 flex items-center justify-center mr-4">
+            <i class="fas fa-phone-alt text-indigo-600 text-xl"></i>
+          </div>
+          <div>
+            <h3 class="font-medium text-slate-900 mb-1">Phone</h3>
+            <p class="text-slate-600">+62 8574 5992 420</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start p-4 rounded-xl bg-white shadow-sm border border-slate-200">
+          <div class="flex-shrink-0 w-12 h-12 rounded-lg bg-indigo-100 flex items-center justify-center mr-4">
+            <i class="fas fa-map-marker-alt text-indigo-600 text-xl"></i>
+          </div>
+          <div>
+            <h3 class="font-medium text-slate-900 mb-1">Location</h3>
+            <p class="text-slate-600">Surabaya, Indonesia</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3D Model Container -->
+    <div class="w-full lg:w-2/5 flex justify-center items-center floating-element" data-aos="zoom-in" data-aos-delay="300">
+      <div class="relative">
+        <div class="pulse-ring absolute inset-0 m-auto w-72 h-72 md:w-96 md:h-96 rounded-full bg-indigo-500/10"></div>
+        <model-viewer 
+          src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
+          alt="3D Astronaut"
+          auto-rotate 
+          camera-controls 
+          ar
+          environment-image="https://modelviewer.dev/shared-assets/environments/spruit_sunrise_1k_HDR.hdr"
+          shadow-intensity="1"
+          class="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full bg-white/50 shadow-xl border-8 border-white"
+        ></model-viewer>
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="w-full lg:w-2/5" data-aos="fade-left">
+      <div class="bg-white rounded-2xl p-8 shadow-xl border border-slate-200">
+        <h3 class="text-2xl font-bold text-slate-900 mb-6 font-poppins">Send me a message</h3>
+        
+        <form class="space-y-6">
+          <!-- Nama -->
+          <div>
+            <label for="name" class="block text-sm font-medium text-slate-700 mb-2">Your Name</label>
+            <input 
+              type="text" 
+              id="name"
+              placeholder="Enggar" 
+              class="w-full p-3 text-slate-800 input-field rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+            />
+          </div>
+
+          <!-- Email -->
+          <div>
+            <label for="email" class="block text-sm font-medium text-slate-700 mb-2">Your Email</label>
+            <input 
+              type="email" 
+              id="email"
+              placeholder="enggar@gmail.com" 
+              class="w-full p-3 text-slate-800 input-field rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+            />
+          </div>
+
+          <!-- Subject -->
+          <div>
+            <label for="subject" class="block text-sm font-medium text-slate-700 mb-2">Subject</label>
+            <input 
+              type="text" 
+              id="subject"
+              placeholder="projek Inquiry" 
+              class="w-full p-3 text-slate-800 input-field rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+            />
+          </div>
+
+          <!-- Message -->
+          <div>
+            <label for="message" class="block text-sm font-medium text-slate-700 mb-2">Your Message</label>
+            <textarea 
+              id="message"
+              placeholder="haloo, saya ingin bertanya tentang..." 
+              rows="4"
+              class="w-full p-3 text-slate-800 input-field rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent resize-none"
+            ></textarea>
+          </div>
+
+          <!-- Button -->
+          <button
+            type="submit"
+            class="mt-2 w-full py-3.5 text-lg font-semibold text-white rounded-xl 
+                   bg-gradient-to-r from-slate-900 to-indigo-900
+                   shadow-lg shadow-indigo-500/20
+                   transition-all duration-300 ease-out
+                   hover:shadow-xl hover:shadow-indigo-500/30
+                   hover:from-indigo-700 hover:to-purple-800
+                   focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+            <span class="flex items-center justify-center">
+              Send Message
+              <i class="fas fa-paper-plane ml-3"></i>
+            </span>
+          </button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- script mobile menu -->
+<script>
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
+</script>
+
+
+
+ <!-- AOS Script -->
+ <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+ <script>
+   AOS.init();
+ </script>
+ 
+ <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    AOS.init({ 
+      duration: 800, 
+      once: true,
+      easing: 'ease-out-quad'
+    });
+  });
+</script>
+<script src="js/experience.js"></script>
+<script src="js/animasiKeahlian.js"></script>
+</body>
+</html>
